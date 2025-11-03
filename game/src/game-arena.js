@@ -70,9 +70,11 @@ function GameArena() {
         ctx.font = `bold 16px arial`;
         ctx.fillText("重新开始", buttonX + buttonWidth / 2, buttonY + buttonHeight / 2 + 5);
 
-        // draw game rules text next to the button
-        const rulesX = buttonX + buttonWidth + 20;
-        const rulesY = buttonY;
+        // draw game rules text between grid and drawing area
+        const gridBottom = 6 * 80; // 480
+        const drawingTop = canvas.height * 0.65;
+        const rulesY = gridBottom + 20; // Start just below the grid
+        const rulesX = 20; // Left aligned for better mobile readability
         ctx.fillStyle = "#222";
         ctx.textAlign = "left";
         ctx.font = `14px arial`;
